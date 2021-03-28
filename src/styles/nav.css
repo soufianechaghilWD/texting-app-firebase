@@ -1,0 +1,34 @@
+nav{
+    background-color: black;
+}
+.nav__content{
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 50px;
+    align-items: center;
+}
+.navbar__avatarAndUsername > h3{
+    display: block;
+    margin: auto 0 auto 5px;
+}
+.navbar__logo{
+    padding-top: 9px;
+}
+.navbar__logout > button{
+    width: 185px;
+    height: 32px;
+    color: white;
+    background-color: #35B0B0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+}
+.navbar__logout > button:hover{
+    transform: translateY(-7px);
+    transition: 0.2s ease-in-out;
+}

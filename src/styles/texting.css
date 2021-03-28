@@ -1,0 +1,74 @@
+.texting__null{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.texting__in{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0 0 0.3rem;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.texting__in > h1{
+    text-align: center;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgb(209, 209, 209);
+}
+.texting__texts{
+    flex: 1;
+    height: 100%;
+    overflow: auto;
+    margin: 0.5rem 0.6rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+.texting__text{
+    max-width: 50%;
+    display: flex;
+    margin-bottom: 1rem;
+}
+.texting__text > small{
+    font-weight: 300;
+    font-size: 12px;
+}
+.texting__text > div {
+    background-color: #C4C4C4;
+    margin: 0 5px;
+    padding: 5px;
+    border-radius: 5px;
+    width: 85%;
+}
+.texting__text > div > p{
+    overflow-wrap: break-word;
+}
+.texting__textfromMe{
+    align-self: flex-end;
+}
+.texting__textfromMe > small{
+    order: 2;
+}
+.texting__sending{
+    width: 95%;
+    display: flex;
+    margin: 0 8px;
+    height: 40px;
+    background-color: #C4C4C4;
+    border-radius: 5px;
+}
+.texting__sending > input{
+    flex: 1;
+    border: none;
+    outline-width: 0;
+    background-color: #C4C4C4;
+    border-radius: 5px;
+}
+.texting__sending > button {
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    font-weight: 800;
+}
