@@ -1,0 +1,30 @@
+.search{
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.search > h1{
+    text-align: center;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgb(209, 209, 209);
+}
+.search > div > p{
+    padding: 0.5rem;
+}
+.search > input{
+    margin: 7px;
+    flex: 1;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    outline-width: 0;
+    background-color: #cdcdcd;
+    padding: 10px 0;
+}
+.search__each{
+    cursor: pointer;
+}
+.search__each > h3{
+    display: block;
+    margin: auto 7px auto 0;
+}

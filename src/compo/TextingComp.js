@@ -14,7 +14,6 @@ const TextingComp = ({ currentContact, waitingOnContact, setCurrentContactFun, s
 
     useEffect(() => {
         if(currentContact !== null){
-
             // Getting the Msgs from DB
             db.collection(currentContact?.conversation_id || getIdConversation(currentContact?.id, state?.user?.uid))?.onSnapshot(snap => setTxts(snap?.docs?.map(doc => doc?.data())?.sort((a, b) => a.timeStamp - b.timeStamp)))
             
@@ -22,6 +21,11 @@ const TextingComp = ({ currentContact, waitingOnContact, setCurrentContactFun, s
         
     }, [currentContact])
 
+    useEffect(() => {
+        const last = document?.getElementById('last')
+        last?.scrollIntoView({behavior: 'smooth', block: 'nearest', inline: 'start' })
+    }, [txts])
+    
     const sendMsg = () => {
         if(waitingOnContact){
             // if the user is not in the contact list (Meaning: sending a new msg to a new contact)
@@ -40,7 +44,8 @@ const TextingComp = ({ currentContact, waitingOnContact, setCurrentContactFun, s
                             othedid: waitingOnContact?.id,
                             last_Msg: msg,
                             username: waitingOnContact.username,
-                            photoURL: waitingOnContact.photoURL
+                            photoURL: waitingOnContact.photoURL,
+                            last_Msg_time: new Date()
                         }))
                     })
     
@@ -50,7 +55,8 @@ const TextingComp = ({ currentContact, waitingOnContact, setCurrentContactFun, s
                             othedid: state?.user?.uid,
                             last_Msg: msg,
                             username: state?.user?.displayName,
-                            photoURL: state?.user?.photoURL
+                            photoURL: state?.user?.photoURL,
+                            last_Msg_time: new Date()
                         })
                     })
                     
@@ -73,12 +79,14 @@ const TextingComp = ({ currentContact, waitingOnContact, setCurrentContactFun, s
             addTheMsg.then(() => {
                 const updateMyContactLastMsg = new Promise((reso, reje) => {
                     reso(db.collection(state?.user?.uid).doc(currentContact?.othedid).update({
-                        last_Msg: msg
+                        last_Msg: msg,
+                        last_Msg_time: new Date()
                     }))
                 })
                 updateMyContactLastMsg.then(() => {
                     db.collection(currentContact?.othedid).doc(state?.user?.uid).update({
-                        last_Msg: msg
+                        last_Msg: msg,
+                        last_Msg_time: new Date()
                     })
                 })
             })
@@ -99,8 +107,9 @@ const TextingComp = ({ currentContact, waitingOnContact, setCurrentContactFun, s
             <div className="texting__in">
                 <h1>{ FirstLetterMaji(currentContact?.username) || FirstLetterMaji(waitingOnContact?.username)}</h1>
                 <div className="texting__texts">
-                    {txts?.map(txt => <div key={txt.sender + txt?.msgData} 
+                    {txts?.map((txt, index) => <div key={index} 
                     className={`${txt?.sender === state?.user?.uid && "texting__textfromMe"} texting__text`} 
+                    id={`${index === txts.length - 1 && "last"}`}
                     >
                         <small>{txt?.sender === state?.user?.uid ? FirstLetterMaji(state?.user?.displayName) : FirstLetterMaji(currentContact?.username)}</small>
                         <div>

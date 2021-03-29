@@ -30,6 +30,7 @@
     max-width: 50%;
     display: flex;
     margin-bottom: 1rem;
+    width: fit-content;
 }
 .texting__text > small{
     font-weight: 300;

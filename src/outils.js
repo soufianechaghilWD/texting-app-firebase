@@ -27,5 +27,15 @@ export const TheRightSize = (str) => {
     else return str
 }
 
+export const getDataAccToInp = (users, inp) => {
+  return inp === "" ? [] :  users.filter(ele => {
+    if(inp.length <= ele.username.length) {
+        let tmp = ele.username.split('').slice(0, inp.length).join('')
+        if(tmp === inp) return ele
+    }
+  }) 
+}
+
+
 // console.log(getIdConversation("lDgzfgLU6ANIbwOf3MinJW7vqqo2", "hpaAMTC9kbP0G4UhnMabrPpS8tB3"))
 

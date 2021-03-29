@@ -17,11 +17,12 @@ const useStyles = makeStyles((theme) => ({
   
 const ContactsComp = ({ currentUser, setCurrentContactFun, currentContact }) => {
 
+
     const classes = useStyles();
     return (
         <div className="contactscomp">
             <h1>Contacts</h1>
-            {currentUser?.contacts?.map(contact => <div onClick={() => setCurrentContactFun(contact)} key={contact.username} className={`${classes.root} ${currentContact?.username === contact?.username && "contactscomp__eachSelected"} contactscomp__each`}>
+            {currentUser?.contacts?.sort((a, b) => b.last_Msg_time - a.last_Msg_time)?.map((contact, index) => <div onClick={() => setCurrentContactFun(contact)} key={index} className={`${classes.root} ${currentContact?.username === contact?.username && "contactscomp__eachSelected"} contactscomp__each`}>
                 <Avatar alt="profilePic" src={contact?.photoURL} />
                 <div>
                     <h3>{FirstLetterMaji(contact.username)}</h3>
