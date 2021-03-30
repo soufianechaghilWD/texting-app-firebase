@@ -1,70 +1,15 @@
-# Getting Started with Create React App
+# Creating a Texting App 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+In this project I built a texting app using Firebase and React.js
 
-## Available Scripts
+## Technologies I used
 
-In the project directory, you can run:
+I didn't use any back end for this app I took advantage of firebase authentification and firebase realtime database . For the front end I used react , To manage the state I used React Context API and for navigating the App I used React Router . for the styling I used Material UI , emoji-picker-react , react-icons and CSS . In the file src/outils.js there's some functions I used to solve some problems (Getting an Id based on two ids (The id should be the same no matter the order of the inputs) to create a room for a new conversation, Getting the list of users based on an input for the search functionality ...)
 
-### `npm start`
+### About the App
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+It's a texting app , Firstable it allows the user to sign up with email and password, then the user can search for other users by username, And send them a text (Including Emojis) and it's realtime, when the receiver sees the text the user gets notified (Seen functionality) , Also the user has the list of all his contacts ( Sorted by time ) and the last Text in theire conversation , When The user receives a new text it gets highlighted until he replies to it . And Finally the user can Log out and Log In again .
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+#### The Url 
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+https://textin-app.web.app/
