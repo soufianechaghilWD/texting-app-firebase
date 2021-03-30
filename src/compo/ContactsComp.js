@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { FirstLetterMaji, TheRightSize } from '../outils'
 import "../styles/contactscomp.css"
 import { makeStyles } from '@material-ui/core/styles';
@@ -17,7 +17,6 @@ const useStyles = makeStyles((theme) => ({
   
 const ContactsComp = ({ currentUser, setCurrentContactFun, currentContact }) => {
 
-
     const classes = useStyles();
     return (
         <div className="contactscomp">
@@ -26,7 +25,8 @@ const ContactsComp = ({ currentUser, setCurrentContactFun, currentContact }) => 
                 <Avatar alt="profilePic" src={contact?.photoURL} />
                 <div>
                     <h3>{FirstLetterMaji(contact.username)}</h3>
-                    <p>{ TheRightSize(contact.last_Msg)}</p>
+                    <p className={`${(contact?.last_Msg_seen === false && contact?.last_Msg_sender !== currentUser?.info?.id) && "txt__unseen"}`} >{ TheRightSize(contact.last_Msg)}
+                    </p>
                 </div>    
             </div>)}
         </div>

@@ -34,6 +34,7 @@ const Home = () => {
         setWaitingOnContact(newContact)
     }
 
+
     return (
         <div className="home">
             <Navbar />
@@ -42,7 +43,7 @@ const Home = () => {
                     <ContactsComp  currentUser={currentUser} setCurrentContactFun={setCurrentContactFun} currentContact={currentContact} />
                 </div>
                 <div className="home__currentConversation">
-                    <TextingComp setCurrentContactFun={setCurrentContactFun} currentContact={currentContact} waitingOnContact={waitingOnContact} setNewWaitingOnContact={setNewWaitingOnContact}/>
+                    <TextingComp setCurrentContactFun={setCurrentContactFun} currentContact={currentContact} waitingOnContact={waitingOnContact} setNewWaitingOnContact={setNewWaitingOnContact} currentUser={currentUser}/>
                 </div>
                 <div className="home__search">
                     <SearchComp currentUser={currentUser} waitingOnContact={waitingOnContact}  setNewWaitingOnContact={setNewWaitingOnContact} setCurrentContactFun={setCurrentContactFun} />

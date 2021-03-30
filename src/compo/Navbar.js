@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useStateValue } from "../compo/StateProvider"
 import { FirstLetterMaji } from '../outils'
 import { makeStyles } from '@material-ui/core/styles';
@@ -14,8 +14,9 @@ const useStyles = makeStyles((theme) => ({
       '& > *': {
         margin: theme.spacing(1),
       },
-    },
+    }
   }));
+
 
   
 const Navbar = () => {
@@ -24,6 +25,7 @@ const Navbar = () => {
     const classes = useStyles();
     const history = useHistory()
 
+
     const logout = () => {
         auth.signOut()
         .then(() => {
@@ -31,10 +33,13 @@ const Navbar = () => {
         })
     }
 
+
+
+
     return (
         <nav>
             <div className="nav__content">
-                <div className={`${classes.root} navbar__avatarAndUsername`}  >
+                <div className={`${classes.root} navbar__avatarAndUsername`} >
                     <Avatar alt="profilePic" src={state?.user?.photoURL} />
                     <h3>{ FirstLetterMaji(state?.user?.displayName)}</h3>
                 </div>

@@ -17,7 +17,7 @@
     padding-bottom: 1rem;
     border-bottom: 1px solid rgb(209, 209, 209);
 }
-.texting__texts{
+.texting__texts {
     flex: 1;
     height: 100%;
     overflow: auto;
@@ -26,8 +26,14 @@
     display: flex;
     flex-direction: column;
 }
+.txt__seen{
+    display: block;
+    margin: auto 0;
+    font-size: 10px;
+    color: #414141;
+}
 .texting__text{
-    max-width: 50%;
+    max-width: 75%;
     display: flex;
     margin-bottom: 1rem;
     width: fit-content;
@@ -52,6 +58,15 @@
 .texting__textfromMe > small{
     order: 2;
 }
+.form__wraper{
+    width: 95%;
+    display: flex;
+    margin: 0 8px;
+    height: 40px;
+    background-color: #C4C4C4;
+    border-radius: 5px;
+    position: relative; 
+}
 .texting__sending{
     width: 95%;
     display: flex;
@@ -68,6 +83,19 @@
     border-radius: 5px;
 }
 .texting__sending > button {
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    font-weight: 800;
+    outline: none;
+}
+.emoji__wraper{
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+}
+.emoji__picker{
+    outline: none;
     background-color: transparent;
     border: none;
     font-size: 2rem;

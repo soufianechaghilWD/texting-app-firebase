@@ -19,3 +19,7 @@
 .contactscomp__eachSelected{
     background-color: #C4C4C4;
 }
+.txt__unseen{
+    font-weight: 600;
+    color: #35B0B0;
+}
